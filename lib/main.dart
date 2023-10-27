@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zipzipkus/src/menu/menu.dart';
+import 'package:flame/game.dart';
+import 'package:flame/components.dart';
 
 import 'src/game/game.dart';
 import 'src/utils/transitions.dart';
@@ -8,6 +10,25 @@ import 'src/settings/settings.dart';
 import 'src/utils/route_names.dart';
 import 'src/profile/user_profile.dart';
 import 'src/error/error_screen.dart';
+
+//void main() {
+//  final game = ZipZipGame();
+//  runApp(GameWidget(game: game));
+//}
+//
+//class ZipZipGame extends FlameGame {
+//  SpriteComponent Grandpa = SpriteComponent();
+//  @override
+//  Future<void> onLoad() async {
+//    super.onLoad();
+//    print("loading game assets here");
+////
+//    Grandpa
+//      ..sprite = await loadSprite('grandpa_idle_01.png')
+//      ..size = Vector2(100, 100);
+//    add(Grandpa);
+//  }
+//}
 
 void main() {
   runApp(const MainApp());
@@ -28,9 +49,7 @@ class MainApp extends StatelessWidget {
             path: 'game',
             pageBuilder: (context, state) => buildMyTransition<void>(
               key: const ValueKey('game'),
-              child: const GameScreen(
-                key: Key('game'),
-              ),
+              child: GameScreen(),
               color: Colors.lightGreen,
             ),
           ),

@@ -19,7 +19,7 @@ class MainMenu extends StatelessWidget {
           Positioned.fill(
             //
             child: Image(
-              image: AssetImage('assets/img/cartoon_landscape.jpg'),
+              image: AssetImage('assets/images/cartoon_landscape.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -61,7 +61,7 @@ class _MenuLayoutState extends State<MenuLayout> {
                     context.pushNamed(RouteNames.game);
                   },
                   child: Image.asset(
-                    'assets/img/menu_oyna2.png',
+                    'assets/images/menu_oyna2.png',
                     height: 70.0,
                   )),
             ),
@@ -79,7 +79,7 @@ class _MenuLayoutState extends State<MenuLayout> {
                     context.pushNamed(RouteNames.settings);
                   },
                   child: Image.asset(
-                    'assets/img/menu_ayarlar.png',
+                    'assets/images/menu_ayarlar.png',
                     height: 70.0,
                   )),
             ),
@@ -97,7 +97,7 @@ class _MenuLayoutState extends State<MenuLayout> {
                     context.pushNamed(RouteNames.profile);
                   },
                   child: Image.asset(
-                    'assets/img/menu_profil.png',
+                    'assets/images/menu_profil.png',
                     height: 70.0,
                   )),
             ),
@@ -116,7 +116,7 @@ class _MenuLayoutState extends State<MenuLayout> {
                     // exit
                   },
                   child: Image.asset(
-                    'assets/img/menu_cikis.png',
+                    'assets/images/menu_cikis.png',
                     height: 70.0,
                   )),
             )

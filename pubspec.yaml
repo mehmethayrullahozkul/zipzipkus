@@ -20,3 +20,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/img/cartoon_landscape.jpg
+    - assets/img/menu_oyna2.png
+    - assets/img/menu_ayarlar.png
+    - assets/img/menu_profil.png
+    - assets/img/menu_cikis.png

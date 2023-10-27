@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import '../utils/route_names.dart';
 
-class GameScreen extends StatelessWidget {
-  const GameScreen({super.key});
+class UserProfileScreen extends StatelessWidget {
+  const UserProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class GameScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                       onPressed: () {},
-                      child: const Text('Game Screen',
+                      child: const Text('User Profile Screen',
                           style: TextStyle(
                               fontSize: 14.0, fontWeight: FontWeight.w600))),
                   ElevatedButton(

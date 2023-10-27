@@ -3,8 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:zipzipkus/src/menu/menu.dart';
 
 import 'src/game/game.dart';
-import 'src/style/transitions.dart';
+import 'src/utils/transitions.dart';
 import 'src/settings/settings.dart';
+import 'src/utils/route_names.dart';
+import 'src/profile/user_profile.dart';
+import 'src/error/error_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,15 +16,18 @@ void main() {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
-  static final _router = GoRouter(routes: [
+  static final _router =
+      GoRouter(errorBuilder: (context, state) => ErrorScreen(), routes: [
     GoRoute(
+        name: RouteNames.menu,
         path: '/',
         builder: (context, state) => const MainMenu(key: Key('main menu')),
         routes: [
           GoRoute(
-            path: 'play',
+            name: RouteNames.game,
+            path: 'game',
             pageBuilder: (context, state) => buildMyTransition<void>(
-              key: const ValueKey('play'),
+              key: const ValueKey('game'),
               child: const GameScreen(
                 key: Key('game'),
               ),
@@ -29,9 +35,16 @@ class MainApp extends StatelessWidget {
             ),
           ),
           GoRoute(
+            name: RouteNames.settings,
             path: 'settings',
             builder: (context, state) =>
                 const SettingsScreen(key: Key('settings')),
+          ),
+          GoRoute(
+            name: RouteNames.profile,
+            path: 'profile',
+            builder: (context, state) =>
+                const UserProfileScreen(key: Key('profile')),
           ),
         ])
   ]);
@@ -39,7 +52,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      title: 'Zıp Zıp Kuş',
       theme: ThemeData.from(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.pink,
@@ -52,9 +65,7 @@ class MainApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      routeInformationProvider: _router.routeInformationProvider,
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
+      routerConfig: _router,
     );
   }
 }

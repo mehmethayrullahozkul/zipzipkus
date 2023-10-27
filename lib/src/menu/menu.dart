@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 //import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
-import '../style/palette.dart';
 import '../style/responsive_screen.dart';
 
 class MainMenu extends StatelessWidget {
@@ -40,13 +39,13 @@ class MainMenu extends StatelessWidget {
                       GoRouter.of(context).go('/play');
                       _doNothing();
                     },
-                    child: Text('Oyna!')),
+                    child: const Text('Oyna!')),
                 FilledButton(
                     onPressed: () {
                       GoRouter.of(context).go('/settings');
                       _doNothing();
                     },
-                    child: Text('Ayarlar'))
+                    child: const Text('Ayarlar'))
               ]),
             )));
   }

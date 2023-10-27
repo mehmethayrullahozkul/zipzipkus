@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:zipzipkus/src/menu/menu.dart';
 
 import 'src/game/game.dart';
 import 'src/style/transitions.dart';
-import 'src/style/palette.dart';
 import 'src/settings/settings.dart';
 
 void main() {
@@ -23,7 +21,7 @@ class MainApp extends StatelessWidget {
           GoRoute(
             path: 'play',
             pageBuilder: (context, state) => buildMyTransition<void>(
-              key: ValueKey('play'),
+              key: const ValueKey('play'),
               child: const GameScreen(
                 key: Key('game'),
               ),
@@ -47,7 +45,7 @@ class MainApp extends StatelessWidget {
           seedColor: Colors.pink,
           background: Colors.orange,
         ),
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyMedium: TextStyle(
             color: Colors.amber,
           ),

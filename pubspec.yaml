@@ -9,6 +9,7 @@ environment:
 dependencies:
   flame: ^1.9.1
   flame_texturepacker: ^2.1.0
+  flame_tiled: ^1.15.0
   flutter:
     sdk: flutter
   go_router: ^12.0.0
@@ -22,10 +23,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/cartoon_landscape.jpg
-    - assets/images/menu_oyna2.png
-    - assets/images/menu_ayarlar.png
-    - assets/images/menu_profil.png
-    - assets/images/menu_cikis.png
     - assets/images/
     - assets/
+    - assets/tiles/

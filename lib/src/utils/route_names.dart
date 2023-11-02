@@ -1,7 +1,7 @@
 class RouteNames {
-  static final menu = "/";
-  static final game = "game";
-  static final settings = "settings";
-  static final profile = "profile";
-  static final exit = "exit";
+  static const menu = "/";
+  static const game = "game";
+  static const settings = "settings";
+  static const profile = "profile";
+  static const exit = "exit";
 }

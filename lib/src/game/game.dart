@@ -1,4 +1,5 @@
 import 'package:flame/flame.dart';
+import 'package:flame/input.dart';
 import 'package:flame_texturepacker/flame_texturepacker.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _GameScreenState extends State<GameScreen> {
   }
 }
 
-class ZipZipGame extends FlameGame {
+class ZipZipGame extends FlameGame with HasKeyboardHandlerComponents {
   late final TiledComponent map;
   // Our Camera
   late final CameraComponent cam;

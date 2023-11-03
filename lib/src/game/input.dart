@@ -16,28 +16,39 @@ class Input extends Component with KeyboardHandler {
   bool _jumpPressed = false;
 
   var hAxis = 0.0;
-
+  var yAxis = 0.0;
   @override
   void update(double dt) {
     hAxis = 0;
-    print("pr upd");
+    
     if (_leftPressed) {
-      print("left press");
-      hAxis -= 1;
+      
+      hAxis -= 5;
+      _leftPressed = false;
+    }else if (_rightPressed) {
+      
+      hAxis += 5;
+      _rightPressed = false;
+    }else if(_jumpPressed){
+      yAxis = -5;
+      
+      _jumpPressed = false;
+    
     }
-    if (_rightPressed) {
-      print("right press");
-      hAxis += 1;
-    }
+    yAxis = 0;
     super.update(dt);
   }
 
   @override
   bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    _leftPressed = true;
-    _rightPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
-        keysPressed.contains(LogicalKeyboardKey.arrowRight);
-
-    return super.onKeyEvent(event, keysPressed);
+    if(keysPressed.contains(LogicalKeyboardKey.space)){
+      _jumpPressed = true;
+    }else if(keysPressed.contains(LogicalKeyboardKey.arrowRight)){
+      _rightPressed = true;
+    }else if(keysPressed.contains(LogicalKeyboardKey.arrowLeft)){
+      _leftPressed = true;
+    }
+    
+    return true;
   }
 }

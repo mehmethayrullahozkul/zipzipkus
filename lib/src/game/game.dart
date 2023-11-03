@@ -5,6 +5,7 @@ import 'package:flame/game.dart';
 import 'package:zipzipkus/src/game/gameplay.dart';
 import '../menu/menu.dart';
 import '../settings/settings.dart';
+import '../game/pause_game.dart';
 
 class ZipZipGame extends FlameGame with HasKeyboardHandlerComponents {
   late final scrHeight;
@@ -16,6 +17,11 @@ class ZipZipGame extends FlameGame with HasKeyboardHandlerComponents {
         )),
     SettingsScreen.id: OverlayRoute((context, game) => SettingsScreen(
           onGoBackPressed: _popRoute,
+        )),
+    PauseScreen.id: OverlayRoute((context, game) => PauseScreen(
+          onResumePressed: () {},
+          onRestartPressed: () {},
+          onExitPressed: () {},
         )),
   };
   late final _router =

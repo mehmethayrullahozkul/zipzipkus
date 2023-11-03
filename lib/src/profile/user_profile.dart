@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../utils/route_names.dart';
 
 class UserProfileScreen extends StatelessWidget {
   const UserProfileScreen({super.key});
@@ -23,10 +21,7 @@ class UserProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 14.0, fontWeight: FontWeight.w600))),
                   ElevatedButton(
-                      onPressed: () {
-                        // context.go("/");
-                        context.goNamed(RouteNames.menu);
-                      },
+                      onPressed: () {},
                       child: const Text('Go Back To Menu',
                           style: TextStyle(
                               fontSize: 14.0, fontWeight: FontWeight.w600))),
